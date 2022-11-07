@@ -1,0 +1,123 @@
+@import url("./Variables.css");
+
+.name-link {
+  font-size: 24px;
+}
+
+.name-link:hover {
+  color: purple;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+a>.nav-menu-link:hover {
+  color: var(--secondary-color);
+}
+
+.nav-menu {
+  /* position: sticky; */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 1.5rem 3.5rem; */
+  padding: 0 3.5rem;
+  background-color: transparent;
+}
+
+.nav-menuColor {
+  /*cambio de color al hacer scroll*/
+  /* background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); */
+  background-color: white;
+  transition: all 0.1s ease-in-out;
+}
+
+.nav-menu h1 {
+  color: var(--primary-color);
+}
+
+.nav-menu a {
+  color: white;
+  transition: var(--transition);
+}
+
+.nav-menuColor h1,
+.nav-menuColor a {
+  color: var(--primary-color);
+}
+
+.nav-menu a:hover:not(.name-link) {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.nav-menuColor .name-link:hover {
+  color: var(--secondary-color);
+}
+
+.nav-menu ul {
+  display: flex;
+  gap: 1.9rem;
+}
+
+.nav-menu ul li {
+  font-weight: var(--bold-font);
+}
+
+.burger-menu-container {
+  color: blue;
+  font-size: 2rem;
+  width: auto;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  display: none;
+  user-select: none;
+}
+
+.nav-menu .burger-menu {
+  color: white;
+}
+
+.nav-menuColor .burger-menu {
+  color: purple;
+}
+
+.burger-menu:focus {
+  color: purple;
+} 
+
+/*animation burger icon*/
+
+.line1, .line2, .line3 {
+  width: 30px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .line1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+.change .line2 {opacity: 0;}
+
+/* Rotate last bar */
+.change .line3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
